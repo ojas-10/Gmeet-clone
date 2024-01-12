@@ -1,0 +1,117 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+#video-grid{
+    display:flex;
+    justify-content: center; /*Just for alignment , like flex-start , flex-end kind of rowise h*/
+}
+
+video{
+    height:300px;
+    width:400px;
+    object-fit: cover;
+}
+
+.main{
+    height: 100vh;
+    display: flex;
+}
+
+.main_left{
+    flex:0.8; /*this is kind of relative sizing (adjusting width) in the left section */
+    display:flex; /*to make any container flexbox*/
+    flex-direction: column;  /*will be arranged in a column (top to bottom) rather than a row (left to right), which is the default direction for a flex container.*/
+}
+
+.main_right{
+    flex:0.2;
+}
+
+.main_videos{
+    flex-grow: 1;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center; /*kind of vertially alignment h in center*/
+    padding:40px;  /* change*/
+}
+
+.main_controls{
+    display:flex;
+    background-color: #1C1E20;
+    color:#D2D2D2;
+    padding:5px;
+    justify-content: space-between;
+}
+
+.main_controls_block{
+    display:flex;
+}
+
+.main_controls_button{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding:8px 10px; /* top,bottom->8px right,left->10px*/
+    min-width: 80px;
+    cursor: pointer;
+}
+
+.main_controls_button i{
+    font-size: 24px;;
+}
+
+.leave_meeting{
+    color:red;
+}
+
+.main_controls_button:hover{
+    background-color: #343434;
+    border-radius: 5px;
+}
+
+.main_right{
+    display:flex;
+    flex-direction:column;
+    background-color: #242324;
+    border-left:1px solid #3D3D42;
+}
+
+h3{
+    color:white;
+}
+
+.main_header{
+    color:#F5F5F5;
+    text-align:center;
+}
+
+.main_chat_window{
+    flex-grow:1;
+    overflow-y: scroll;
+}
+
+.main_message_container{
+    padding:22px 12px;
+    display: flex;
+}
+
+.main_message_container input{
+    flex-grow:1;
+    background-color:transparent;
+    border:none;
+    color:#F5F5F5;
+}
+
+.messages{
+    color:white;
+    list-style: none;
+}
+
+.unmute , .stop{
+    color:red;
+}
+
