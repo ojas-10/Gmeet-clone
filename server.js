@@ -23,12 +23,12 @@ connections=[];
 app.set('view engine', 'ejs');  //to render webpages, basically you are telling express to use ejs as a view engine.
 app.use(express.static('public'));//express.static is a built in middleware means middleware,they are functions which have access to request object,response object. public folder contains css and javascript code.
 app.use('/peerjs',peerServer); //this means any requests made to the route that starts with /peerjs will be managed through peerServers which is responsible for managing WebRTC connections with peers.
-app.get("/join", passport.authenticate("google", {
+app.get("/", passport.authenticate("google", {
     scope: ["profile", "email"],}
     
 ))
 
-app.get("/",(req,res) => {
+app.get("/h",(req,res) => {
   res.sendStatus(200)
 })
 
@@ -72,5 +72,5 @@ io.on('connection',socket=>{   //io.on->Listens for incoming connections from cl
   })
 })
           
-server.listen(3000);
+server.listen(process.env.PORT);
         
